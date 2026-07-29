@@ -43,6 +43,9 @@ footer{background:var(--dark);color:#c9c9c9;padding:48px 20px 24px;font-size:.85
 .foot-grid h4{color:#fff;margin-bottom:10px;font-size:.9rem}
 .foot-grid li{list-style:none;padding:3px 0}.foot-grid a:hover{color:#fff}
 .copy{text-align:center;border-top:1px solid #333;padding-top:18px;font-size:.75rem;color:#8a8a8a}
+.kb{overflow:hidden;position:relative}
+.kb img{width:100%;height:100%;object-fit:cover;animation:kb 18s ease-in-out infinite alternate}
+@keyframes kb{from{transform:scale(1)}to{transform:scale(1.12)}}
 .star{animation:twinkle 2.6s ease-in-out infinite}
 @keyframes twinkle{0%,100%{opacity:.25}50%{opacity:1}}
 .louver{transform-origin:center;animation:tilt 6s ease-in-out infinite}

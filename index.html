@@ -66,6 +66,11 @@ nav a:hover{color:var(--accent)}
 /* Scroll reveal */
 .reveal{opacity:0;transform:translateY(36px);transition:opacity .8s ease,transform .8s ease}
 .reveal.visible{opacity:1;transform:none}
+/* Ken-burns photo animation */
+.kb{overflow:hidden}
+.kb img{width:100%;height:100%;object-fit:cover;animation:kb 18s ease-in-out infinite alternate}
+@keyframes kb{from{transform:scale(1)}to{transform:scale(1.12)}}
+.thumb{background-size:cover;background-position:center}
 /* Rain */
 .drop{animation:rain 1.1s linear infinite}
 @keyframes rain{0%{transform:translateY(-40px);opacity:0}15%{opacity:1}100%{transform:translateY(300px);opacity:0}}
@@ -213,7 +218,7 @@ footer{background:var(--dark);color:#c9c9c9;padding:48px 20px 24px;font-size:.85
   <!-- GALLERY -->
   <div>
     <div class="gallery-main">
-      <div class="ph ph1" id="mainImg">
+      <template id="heroTpl">
         <svg class="hero-svg" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
           <defs>
             <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
@@ -259,18 +264,19 @@ footer{background:var(--dark);color:#c9c9c9;padding:48px 20px 24px;font-size:.85
           <rect x="255" y="392" width="60" height="44" rx="8" fill="#e8e2d6"/><rect x="485" y="392" width="60" height="44" rx="8" fill="#e8e2d6"/>
           <text x="400" y="580" text-anchor="middle" font-family="Arial" font-size="17" fill="#5c4a33">COORDINATEZ PRO — motorized louvers · integrated LED · post outlets</text>
         </svg>
-      </div>
+      </template>
+      <div class="ph kb" id="mainImg"><img src="https://images.pexels.com/photos/33287940/pexels-photo-33287940/free-photo-of-modern-outdoor-pergola-with-comfortable-seating.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Coordinatez PRO pergola with lounge seating"></div>
       <div class="badge">SAVE 50%</div>
     </div>
     <div class="thumbs" id="thumbs">
-      <div class="thumb ph1 active" data-ph="ph1">FRONT</div>
-      <div class="thumb ph2" data-ph="ph2">LOUVERS</div>
-      <div class="thumb ph3" data-ph="ph3">GARDEN</div>
-      <div class="thumb ph4" data-ph="ph4">NIGHT LED</div>
-      <div class="thumb ph5" data-ph="ph5">WALLS</div>
-      <div class="thumb ph6" data-ph="ph6">MOTOR</div>
-      <div class="thumb ph7" data-ph="ph7">DETAIL</div>
-      <div class="thumb ph8" data-ph="ph8">SPECS</div>
+      <div class="thumb active" data-src="https://images.pexels.com/photos/33287940/pexels-photo-33287940/free-photo-of-modern-outdoor-pergola-with-comfortable-seating.jpeg?auto=compress&cs=tinysrgb&w=1600" style="background-image:url('https://images.pexels.com/photos/33287940/pexels-photo-33287940/free-photo-of-modern-outdoor-pergola-with-comfortable-seating.jpeg?auto=compress&cs=tinysrgb&w=200')">FRONT</div>
+      <div class="thumb" data-src="https://images.pexels.com/photos/38268703/pexels-photo-38268703/free-photo-of-tranquil-outdoor-pergola-with-sunlight-shadows.jpeg?auto=compress&cs=tinysrgb&w=1600" style="background-image:url('https://images.pexels.com/photos/38268703/pexels-photo-38268703/free-photo-of-tranquil-outdoor-pergola-with-sunlight-shadows.jpeg?auto=compress&cs=tinysrgb&w=200')">LOUVERS</div>
+      <div class="thumb" data-src="https://images.pexels.com/photos/36410012/pexels-photo-36410012/free-photo-of-sunlit-wooden-pergola-with-lush-greenery.jpeg?auto=compress&cs=tinysrgb&w=1600" style="background-image:url('https://images.pexels.com/photos/36410012/pexels-photo-36410012/free-photo-of-sunlit-wooden-pergola-with-lush-greenery.jpeg?auto=compress&cs=tinysrgb&w=200')">GARDEN</div>
+      <div class="thumb" data-src="https://images.pexels.com/photos/26223465/pexels-photo-26223465/free-photo-of-outdoor-wooden-bench-illuminated-by-panel-behind-it.jpeg?auto=compress&cs=tinysrgb&w=1600" style="background-image:url('https://images.pexels.com/photos/26223465/pexels-photo-26223465/free-photo-of-outdoor-wooden-bench-illuminated-by-panel-behind-it.jpeg?auto=compress&cs=tinysrgb&w=200')">NIGHT LED</div>
+      <div class="thumb" data-src="https://images.pexels.com/photos/35112960/pexels-photo-35112960/free-photo-of-charming-outdoor-patio-with-brick-columns-and-greenery.jpeg?auto=compress&cs=tinysrgb&w=1600" style="background-image:url('https://images.pexels.com/photos/35112960/pexels-photo-35112960/free-photo-of-charming-outdoor-patio-with-brick-columns-and-greenery.jpeg?auto=compress&cs=tinysrgb&w=200')">WALLS</div>
+      <div class="thumb" data-src="https://images.pexels.com/photos/27626176/pexels-photo-27626176/free-photo-of-a-modern-outdoor-living-area-with-a-large-table-and-chairs.jpeg?auto=compress&cs=tinysrgb&w=1600" style="background-image:url('https://images.pexels.com/photos/27626176/pexels-photo-27626176/free-photo-of-a-modern-outdoor-living-area-with-a-large-table-and-chairs.jpeg?auto=compress&cs=tinysrgb&w=200')">LOUNGE</div>
+      <div class="thumb" data-src="https://images.pexels.com/photos/19715895/pexels-photo-19715895/free-photo-of-a-lamp-hanging-from-an-arbor.jpeg?auto=compress&cs=tinysrgb&w=1600" style="background-image:url('https://images.pexels.com/photos/19715895/pexels-photo-19715895/free-photo-of-a-lamp-hanging-from-an-arbor.jpeg?auto=compress&cs=tinysrgb&w=200')">EVENING</div>
+      <div class="thumb ph1" data-ph="svg">3D VIEW</div>
     </div>
   </div>
 
@@ -385,7 +391,10 @@ footer{background:var(--dark);color:#c9c9c9;padding:48px 20px 24px;font-size:.85
 <section class="feature reveal">
   <h2>Next-Level Outdoor Performance</h2>
   <p>Adjustable motorized louvers give you sun, shade, or full rain protection at the touch of a button.</p>
-  <div class="feat-img" style="background:linear-gradient(#bcd8ee,#eaf3fa);display:block;padding:0;overflow:hidden">
+  <div class="feat-img kb" style="display:block;padding:0">
+    <img src="https://images.pexels.com/photos/38268703/pexels-photo-38268703/free-photo-of-tranquil-outdoor-pergola-with-sunlight-shadows.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Louvered pergola casting adjustable shade">
+  </div>
+  <div class="feat-img" style="background:linear-gradient(#bcd8ee,#eaf3fa);display:block;padding:0;overflow:hidden;margin-top:18px">
     <svg viewBox="0 0 900 394" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
       <circle cx="110" cy="70" r="30" fill="#ffd873"/><circle cx="110" cy="70" r="44" fill="#ffd873" opacity=".2"/>
       <g class="cloud" opacity=".8"><ellipse cx="60" cy="55" rx="55" ry="17" fill="#fff"/><ellipse cx="108" cy="47" rx="38" ry="13" fill="#fff"/></g>
@@ -412,7 +421,10 @@ footer{background:var(--dark);color:#c9c9c9;padding:48px 20px 24px;font-size:.85
 <section class="feature reveal">
   <h2>Integrated Outdoor Power System</h2>
   <p>Weatherproof outlets built directly into the posts power your heater, speakers, grill, and lighting — evenings included.</p>
-  <div class="feat-img" style="background:linear-gradient(#101828,#233149);display:block;padding:0;overflow:hidden">
+  <div class="feat-img kb" style="display:block;padding:0">
+    <img src="https://images.pexels.com/photos/26223465/pexels-photo-26223465/free-photo-of-outdoor-wooden-bench-illuminated-by-panel-behind-it.jpeg?auto=compress&cs=tinysrgb&w=1600" alt="Evening patio lit by integrated LED lighting">
+  </div>
+  <div class="feat-img" style="background:linear-gradient(#101828,#233149);display:block;padding:0;overflow:hidden;margin-top:18px">
     <svg viewBox="0 0 900 394" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
       <g fill="#fff">
         <circle class="star" cx="80" cy="50" r="2.5"/><circle class="star" cx="180" cy="90" r="2" style="animation-delay:.4s"/>
@@ -494,9 +506,9 @@ footer{background:var(--dark);color:#c9c9c9;padding:48px 20px 24px;font-size:.85
   <h2>Real Homeowner Picks</h2>
   <p>See why homeowners love our pergolas.</p>
   <div class="testi-grid">
-    <div class="testi"><div class="t-img ph3">CUSTOMER PHOTO</div><div class="t-body"><h4>Poolside Lounge Upgrade</h4><p>“Our 10×10 pergola created the perfect shaded spot by the pool — the LED lights make evenings magic.”</p><div class="who">@CustomerName · City, ST</div></div></div>
-    <div class="testi"><div class="t-img ph2">CUSTOMER PHOTO</div><div class="t-body"><h4>Garden Corner Dining Room</h4><p>“We turned an unused garden corner into a cozy semi-enclosed dining area for family meals.”</p><div class="who">@CustomerName · City, ST</div></div></div>
-    <div class="testi"><div class="t-img ph1">CUSTOMER PHOTO</div><div class="t-body"><h4>Modern Backyard Retreat</h4><p>“It's the part of the backyard everyone naturally ends up in, any time of day.”</p><div class="who">@CustomerName · City, ST</div></div></div>
+    <div class="testi"><div class="t-img kb"><img src="https://images.pexels.com/photos/27756847/pexels-photo-27756847/free-photo-of-a-table-and-chairs-outside-on-a-patio-with-plants.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Patio dining set under pergola"></div><div class="t-body"><h4>Poolside Lounge Upgrade</h4><p>“Our 10×10 pergola created the perfect shaded spot by the pool — the LED lights make evenings magic.”</p><div class="who">@CustomerName · City, ST</div></div></div>
+    <div class="testi"><div class="t-img kb"><img src="https://images.pexels.com/photos/30081708/pexels-photo-30081708/free-photo-of-sunlit-patio-table-with-modern-design.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Sunlit modern patio table"></div><div class="t-body"><h4>Garden Corner Dining Room</h4><p>“We turned an unused garden corner into a cozy semi-enclosed dining area for family meals.”</p><div class="who">@CustomerName · City, ST</div></div></div>
+    <div class="testi"><div class="t-img kb"><img src="https://images.pexels.com/photos/33401746/pexels-photo-33401746/free-photo-of-modern-minimalist-patio-with-bamboo-plant.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Modern minimalist patio"></div><div class="t-body"><h4>Modern Backyard Retreat</h4><p>“It's the part of the backyard everyone naturally ends up in, any time of day.”</p><div class="who">@CustomerName · City, ST</div></div></div>
   </div>
 </section>
 
@@ -521,13 +533,12 @@ footer{background:var(--dark);color:#c9c9c9;padding:48px 20px 24px;font-size:.85
 <script>
 // ---- Gallery ----
 const main=document.getElementById('mainImg');
-const heroHTML=main.innerHTML;
+const heroTpl=document.getElementById('heroTpl');
 document.querySelectorAll('.thumb').forEach(t=>t.addEventListener('click',()=>{
   document.querySelectorAll('.thumb').forEach(x=>x.classList.remove('active'));
   t.classList.add('active');
-  main.className='ph '+t.dataset.ph;
-  if(t.dataset.ph==='ph1'){main.innerHTML=heroHTML}
-  else{main.textContent=t.textContent+' PHOTO'}
+  if(t.dataset.src){main.className='ph kb';main.innerHTML='<img src="'+t.dataset.src+'" alt="Coordinatez pergola">'}
+  else{main.className='ph ph1';main.innerHTML=heroTpl.innerHTML}
 }));
 
 // ---- Countdown (ends in 3 days from load) ----

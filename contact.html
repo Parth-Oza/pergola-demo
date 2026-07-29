@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact Us | Coordinatez Pergolas</title>
+<link rel="stylesheet" href="shared.css">
+<style>
+.contact-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:32px;max-width:1100px;margin:0 auto;padding:0 20px 40px}
+@media(max-width:860px){.contact-grid{grid-template-columns:1fr}}
+.form-card{border:1px solid var(--border);border-radius:16px;padding:28px}
+.form-card label{font-weight:700;font-size:.85rem;display:block;margin:14px 0 6px}
+.form-card input,.form-card select,.form-card textarea{width:100%;border:1px solid var(--border);border-radius:8px;padding:12px 14px;font:inherit}
+.form-card textarea{min-height:120px;resize:vertical}
+.side-card{border:1px solid var(--border);border-radius:16px;padding:24px;margin-bottom:18px;transition:transform .25s,box-shadow .25s}
+.side-card:hover{transform:translateY(-4px);box-shadow:0 12px 26px rgba(0,0,0,.1)}
+.side-card h3{margin-bottom:6px;font-size:1rem}
+.side-card p{color:var(--gray);font-size:.88rem}
+.pulse{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--green);margin-right:6px;animation:pulse 1.8s ease infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(46,125,50,.5)}50%{box-shadow:0 0 0 7px rgba(46,125,50,0)}}
+.ok{background:#e8f5e9;border:1px solid #a5d6a7;color:#256029;border-radius:10px;padding:14px;margin-top:14px;display:none}
+</style>
+</head>
+<body>
+<div class="announce">☀️ <b>Big Summer Sale</b> — save up to $7,000 on your new pergola for a limited time. <a href="sale.html">Shop Now »</a></div>
+<header><div class="header-inner">
+  <div class="logo"><a href="index.html">COORDINATE<span>Z</span></a></div>
+  <nav><ul>
+    <li><a href="sale.html">SUMMER SALE</a></li><li><a href="index.html">PRODUCT</a></li>
+    <li><a href="inspiration.html">INSPIRATION</a></li><li><a href="info.html">INFO</a></li><li><a class="on" href="contact.html">CONTACT US</a></li>
+  </ul></nav>
+  <div class="header-icons"><a href="#">Search</a><a href="#">Log in</a><a href="#">Cart (0)</a></div>
+</div></header>
+
+<div class="page-hero reveal">
+  <div class="eyebrow">We're Here to Help</div>
+  <h1>Contact Us</h1>
+  <p><span class="pulse"></span>Specialists online — Mon–Fri 8am–10pm ET · Sat–Sun 11am–10pm ET</p>
+</div>
+
+<div class="contact-grid">
+  <div class="form-card reveal">
+    <h2 style="margin-bottom:4px">Send a Message</h2>
+    <p style="color:var(--gray);font-size:.88rem">Demo form — no backend. In production this connects to the client's helpdesk or email.</p>
+    <form id="cform">
+      <label>Name</label><input required placeholder="Your name">
+      <label>Email</label><input type="email" required placeholder="you@example.com">
+      <label>Topic</label>
+      <select><option>Pre-sale question</option><option>Order & delivery</option><option>Installation</option><option>Warranty & support</option><option>Track my order</option></select>
+      <label>Message</label><textarea required placeholder="How can we help?"></textarea>
+      <button class="cta" style="margin-top:18px;width:100%">Send Message</button>
+      <div class="ok" id="ok">✅ Thanks! This demo doesn't send email — in production your message would reach the support team.</div>
+    </form>
+  </div>
+  <div>
+    <div class="side-card reveal"><h3>📞 Phone</h3><p>+1 (000) 000-0000<br>Mon–Fri 8am–10pm ET</p></div>
+    <div class="side-card reveal"><h3>✉️ Email</h3><p>support@coordinatez.com<br>Replies within one business day</p></div>
+    <div class="side-card reveal"><h3>💬 WhatsApp</h3><p>Message us for quick answers and photos of your space.</p></div>
+    <div class="side-card reveal"><h3>🎥 Video Consultation</h3><p>Tour the showroom live with a specialist and get personalized advice.</p><a class="cta" style="margin-top:12px;font-size:.85rem;padding:10px 18px" href="#" onclick="alert('Demo only — connect Calendly in production.');return false">Book Now »</a></div>
+    <div class="side-card reveal"><h3>📦 Track Order</h3><p>Demo placeholder — production connects to a tracking service.</p></div>
+  </div>
+</div>
+
+<div class="newsletter"><h2>Subscribe & Receive a 3% Discount Coupon</h2><p>Sign up for exclusive offers.</p>
+<form onsubmit="event.preventDefault();alert('Demo only — connect an email platform in production.')"><input type="email" placeholder="Email address" required><button>Subscribe</button></form></div>
+
+<footer>
+  <div class="foot-grid">
+    <div><h4>COORDINATEZ</h4><ul><li>123 Placeholder St, City, ST 00000</li><li>support@coordinatez.com</li><li>+1 (000) 000-0000</li></ul></div>
+    <div><h4>Conditions</h4><ul><li><a href="info.html#policies">Terms of Service</a></li><li><a href="info.html#policies">Privacy Policy</a></li><li><a href="info.html#policies">Shipping Policy</a></li><li><a href="info.html#policies">Return Policy</a></li><li><a href="info.html#policies">Warranty Policy</a></li></ul></div>
+    <div><h4>About Us</h4><ul><li><a href="info.html">About Us</a></li><li><a href="contact.html">Contact Us</a></li><li><a href="info.html#faq">FAQ</a></li><li><a href="inspiration.html">Inspiration</a></li><li><a href="contact.html">Track Order</a></li></ul></div>
+    <div><h4>Follow Us</h4><ul><li><a href="#">Facebook</a></li><li><a href="#">Instagram</a></li><li><a href="#">YouTube</a></li><li><a href="#">TikTok</a></li></ul></div>
+  </div>
+  <div class="copy">© 2026 Coordinatez — demo template.</div>
+</footer>
+
+<script>
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+document.getElementById('cform').addEventListener('submit',e=>{e.preventDefault();document.getElementById('ok').style.display='block'});
+</script>
+</body>
+</html>
